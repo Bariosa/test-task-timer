@@ -1,11 +1,11 @@
 import { StyledContainer } from "./styles";
-import React from "react";
+import React, { FC } from "react";
 
 interface IContainer {
   children: React.ReactNode;
 }
 
-const Container = ({ children }: IContainer) => {
+const Container: FC<IContainer> = ({ children }) => {
   return <StyledContainer>{children}</StyledContainer>;
 };
 

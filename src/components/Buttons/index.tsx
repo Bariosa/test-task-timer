@@ -1,5 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import { StyledButton } from "./styles";
+import { useDispatch } from "react-redux";
+import { addLog, clearLogs } from "../../store/logsSlice";
 
 interface IButton {
   text: string;
@@ -8,8 +10,22 @@ interface IButton {
   onClick?: () => void;
 }
 
-const Button = ({ color, number, text }: IButton) => {
-  return <StyledButton color={color}>{text}</StyledButton>;
+const Button: FC<IButton> = ({ color, number, text }) => {
+  const dispatch = useDispatch();
+
+  function buttonHandler() {
+    if (number) {
+      dispatch(addLog(number));
+    } else {
+      dispatch(clearLogs());
+    }
+  }
+
+  return (
+    <StyledButton onClick={buttonHandler} color={color}>
+      {text}
+    </StyledButton>
+  );
 };
 
 export default Button;

@@ -1,8 +1,11 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
+import logsSliceReducer from "./logsSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    logs: logsSliceReducer,
+  },
 });
 
 type RootState = ReturnType<typeof store.getState>;
