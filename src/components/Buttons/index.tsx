@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { StyledButton } from "./styles";
-import { useDispatch } from "react-redux";
 import { addLog, clearLogs } from "../../store/logsSlice";
+import { useAppDispatch } from "../../store";
 
 interface IButton {
   text: string;
@@ -11,7 +11,7 @@ interface IButton {
 }
 
 const Button: FC<IButton> = ({ color, number, text }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   function buttonHandler() {
     if (number) {
