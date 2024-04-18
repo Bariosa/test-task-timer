@@ -13,8 +13,8 @@ export const StyledButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    color: #00ffc3;
-    border-color: #00ffc3;
+    color: #0082fe;
+    border-color: #0082fe;
     min-width: 145px;
     height: 45px;
     font-size: 15px;
