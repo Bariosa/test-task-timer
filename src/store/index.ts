@@ -1,10 +1,12 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import logsSliceReducer from "./logsSlice";
+import buttonsSliceReducer from "./buttonsSlice";
 
 export const store = configureStore({
   reducer: {
     logs: logsSliceReducer,
+    buttons: buttonsSliceReducer,
   },
 });
 

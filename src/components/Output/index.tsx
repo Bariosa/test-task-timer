@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../store";
 import { deleteLog } from "../../store/logsSlice";
 
 const Output = () => {
-  const logs = useAppSelector((globalStore) => globalStore.logs.logsArr);
+  const logsArr = useAppSelector((globalStore) => globalStore.logs.logsArr);
   const dispatch = useAppDispatch();
 
   function logHandler(index: number) {
@@ -13,7 +13,7 @@ const Output = () => {
 
   return (
     <StyledOutput>
-      {logs.map((number, index) => (
+      {logsArr.map((number, index) => (
         <StyledItem key={index}>
           № {number}
           <StyledDeleteCross onClick={() => logHandler(index)}>

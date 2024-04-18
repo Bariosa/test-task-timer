@@ -4,15 +4,19 @@ import { StyledButtonsWrapper, StyledTitle } from "./styles";
 import Button from "../Buttons";
 import Output from "../Output";
 import { colors } from "../../styles/variables";
+import { useAppSelector } from "../../store";
 
 function App() {
+  const buttonsArr = useAppSelector(
+    (globalStore) => globalStore.buttons.buttonsArr,
+  );
   return (
     <Container>
       <StyledTitle>Timer</StyledTitle>
       <StyledButtonsWrapper>
-        <Button number={1} text="1 sec" />
-        <Button number={2} text="2 sec" />
-        <Button number={3} text="3 sec" />
+        {buttonsArr.map((item, index) => (
+          <Button key={index} number={item.number} text={item.text} />
+        ))}
         <Button color={colors.dangerousColor} text="Clear" />
       </StyledButtonsWrapper>
       <Output />
