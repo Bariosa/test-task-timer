@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../styles/variables";
 
 export const StyledOutput = styled.ul`
   width: 91%;
@@ -7,13 +8,19 @@ export const StyledOutput = styled.ul`
   padding: 10px 10px;
   font-size: 20px;
   border-radius: 5px;
-  border: 2px #0082fe solid;
+  border: 2px ${colors.primaryColor} solid;
   box-shadow: 1px 1px 5px darkgrey;
 `;
 
 export const StyledItem = styled.li`
   font-size: 20px;
-  color: white;
-  text-shadow: 1px 1px 5px #0082fe;
+  color: ${colors.textColor};
+  text-shadow: 1px 1px 5px ${colors.primaryColor};
   margin-bottom: 15px;
+`;
+
+export const StyledDeleteCross = styled.span`
+  color: ${colors.dangerousColor};
+  cursor: pointer;
+  margin-left: 10px;
 `;

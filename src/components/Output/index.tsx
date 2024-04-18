@@ -1,4 +1,4 @@
-import { StyledItem, StyledOutput } from "./styles";
+import { StyledDeleteCross, StyledItem, StyledOutput } from "./styles";
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { deleteLog } from "../../store/logsSlice";
@@ -16,9 +16,9 @@ const Output = () => {
       {logs.map((number, index) => (
         <StyledItem key={index}>
           № {number}
-          <span onClick={() => logHandler(index)} className={"delete"}>
+          <StyledDeleteCross onClick={() => logHandler(index)}>
             &times;
-          </span>
+          </StyledDeleteCross>
         </StyledItem>
       ))}
     </StyledOutput>
