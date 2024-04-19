@@ -4,7 +4,7 @@ import { colors } from "../../styles/variables";
 export const StyledOutput = styled.ul`
   width: 91%;
   min-height: 200px;
-  margin: 25px auto;
+  margin: 10px auto;
   padding: 10px 10px;
   font-size: 20px;
   border-radius: 5px;

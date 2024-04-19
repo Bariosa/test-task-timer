@@ -12,7 +12,6 @@ const logsSlice = createSlice({
   reducers: {
     addLog: (store, action) => {
       store.logsArr.push(action.payload);
-      store.logsArr.sort();
     },
     clearLogs: (store) => {
       store.logsArr = [];
@@ -20,9 +19,13 @@ const logsSlice = createSlice({
     deleteLog: (store, action) => {
       store.logsArr.splice(action.payload, 1);
     },
+    sortLogs: (store) => {
+      store.logsArr.sort();
+    },
   },
 });
 
+export const sortLogs = logsSlice.actions.sortLogs;
 export const addLog = logsSlice.actions.addLog;
 export const clearLogs = logsSlice.actions.clearLogs;
 export const deleteLog = logsSlice.actions.deleteLog;

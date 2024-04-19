@@ -5,6 +5,7 @@ import Button from "../Buttons";
 import Output from "../Output";
 import { colors } from "../../styles/variables";
 import { useAppSelector } from "../../store";
+import Options from "../Options";
 
 function App() {
   const buttonsArr = useAppSelector(
@@ -19,6 +20,7 @@ function App() {
         ))}
         <Button color={colors.dangerousColor} text="Clear" />
       </StyledButtonsWrapper>
+      <Options />
       <Output />
     </Container>
   );
