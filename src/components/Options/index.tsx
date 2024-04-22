@@ -5,38 +5,37 @@ import {
   StyledOptionsWrapper,
 } from "./styles";
 import { useAppDispatch } from "../../store";
-import { sortLogs } from "../../store/logsSlice";
+import { sortLogs, sortReverseLogs } from "../../store/logsSlice";
 import { useState } from "react";
 
 const Options = () => {
   const dispatch = useAppDispatch();
-  const [isChecked, setIsChecked] = useState(false);
+  const [isSortAZ, setIsSortAZ] = useState(false);
+  const [isSortZA, setIsSortZA] = useState(false);
 
-  function sortHandler() {
-    if (!isChecked) {
-      dispatch(sortLogs());
-    }
+  function handleSortAZ() {
+    setIsSortZA(false);
+
+    dispatch(sortLogs(!isSortAZ));
+    setIsSortAZ(!isSortAZ);
   }
 
-  function handleCheckboxChange() {
-    setIsChecked(!isChecked);
-  }
+  function handleSortZA() {
+    setIsSortAZ(false);
 
+    dispatch(sortReverseLogs(!isSortZA));
+    setIsSortZA(!isSortZA);
+  }
   return (
     <StyledOptionsWrapper>
-      <StyledLabel onClick={sortHandler}>
-        <StyledCheckbox checked={isChecked} onChange={handleCheckboxChange} />
-        <StyledLabelText>Sort</StyledLabelText>
+      <StyledLabel>
+        <StyledCheckbox checked={isSortAZ} onChange={handleSortAZ} />
+        <StyledLabelText>Sort (a-z)</StyledLabelText>
       </StyledLabel>
 
       <StyledLabel>
-        <StyledCheckbox />
-        <StyledLabelText>Add</StyledLabelText>
-      </StyledLabel>
-
-      <StyledLabel>
-        <StyledCheckbox />
-        <StyledLabelText>Delete</StyledLabelText>
+        <StyledCheckbox checked={isSortZA} onChange={handleSortZA} />
+        <StyledLabelText>Sort (z-a)</StyledLabelText>
       </StyledLabel>
     </StyledOptionsWrapper>
   );

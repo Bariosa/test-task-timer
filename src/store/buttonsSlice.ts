@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { colors } from "../styles/variables";
 
 interface IInitialState {
   buttonsArr: {
-    number: number;
+    number?: number;
     text: string;
+    color?: string;
   }[];
 }
 const initialState: IInitialState = {
@@ -11,6 +13,7 @@ const initialState: IInitialState = {
     { number: 1, text: "1 sec" },
     { number: 2, text: "2 sec" },
     { number: 3, text: "3 sec" },
+    { color: `${colors.dangerousColor}`, text: "Clear" },
   ],
 };
 
