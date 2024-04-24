@@ -10,9 +10,9 @@ interface IInitialState {
 }
 const initialState: IInitialState = {
   buttonsArr: [
-    { number: 1, text: "1 min" },
-    { number: 2, text: "2 min" },
-    { number: 3, text: "3 min" },
+    { number: 1, text: "№1 (30 sec)" },
+    { number: 2, text: "№2 (60 sec)" },
+    { number: 3, text: "№3 (120 sec)" },
     { color: `${colors.dangerousColor}`, text: "Clear" },
   ],
 };
