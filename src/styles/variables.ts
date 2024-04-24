@@ -3,4 +3,5 @@ export const colors = {
   secondaryColor: "#ffb200",
   textColor: "#ffffff",
   dangerousColor: "#ff00d8",
+  safeColor: "#96ff00",
 };

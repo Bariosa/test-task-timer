@@ -10,7 +10,7 @@ interface IButton {
   onClick?: () => void;
 }
 
-const Button: FC<IButton> = ({ color, number, text }) => {
+const Button: FC<IButton> = ({ color, number, text, onClick }) => {
   const dispatch = useAppDispatch();
 
   function buttonHandler() {
@@ -22,7 +22,7 @@ const Button: FC<IButton> = ({ color, number, text }) => {
   }
 
   return (
-    <StyledButton onClick={buttonHandler} color={color}>
+    <StyledButton onClick={onClick || buttonHandler} color={color}>
       {text}
     </StyledButton>
   );
