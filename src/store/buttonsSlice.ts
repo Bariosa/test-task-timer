@@ -6,13 +6,14 @@ interface IInitialState {
     number?: number;
     text: string;
     color?: string;
+    time?: number;
   }[];
 }
 const initialState: IInitialState = {
   buttonsArr: [
-    { number: 1, text: "№1 (30 sec)" },
-    { number: 2, text: "№2 (60 sec)" },
-    { number: 3, text: "№3 (120 sec)" },
+    { number: 1, text: "№1 (30 sec)", time: 30 },
+    { number: 2, text: "№2 (60 sec)", time: 60 },
+    { number: 3, text: "№3 (120 sec)", time: 120 },
     { color: `${colors.dangerousColor}`, text: "Clear" },
   ],
 };
