@@ -1,12 +1,8 @@
-import {
-  StyledCheckbox,
-  StyledLabel,
-  StyledLabelText,
-  StyledOptionsWrapper,
-} from "./styles";
+import { StyledOptionsWrapper } from "./styles";
 import { useAppDispatch } from "../../store";
 import { sortLogs, sortReverseLogs } from "../../store/logsSlice";
 import { useState } from "react";
+import Checkbox from "../ui/Checkbox";
 
 const Options = () => {
   const dispatch = useAppDispatch();
@@ -28,15 +24,19 @@ const Options = () => {
   }
   return (
     <StyledOptionsWrapper>
-      <StyledLabel>
-        <StyledCheckbox checked={isSortAZ} onChange={handleSortAZ} />
-        <StyledLabelText>Sort (a-z)</StyledLabelText>
-      </StyledLabel>
+      <Checkbox
+        name="sort-a-z"
+        text="Sort (a-z)"
+        isChecked={isSortAZ}
+        onChange={handleSortAZ}
+      />
 
-      <StyledLabel>
-        <StyledCheckbox checked={isSortZA} onChange={handleSortZA} />
-        <StyledLabelText>Sort (z-a)</StyledLabelText>
-      </StyledLabel>
+      <Checkbox
+        name="sort-z-a"
+        text="Sort (z-a)"
+        isChecked={isSortZA}
+        onChange={handleSortZA}
+      />
     </StyledOptionsWrapper>
   );
 };

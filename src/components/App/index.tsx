@@ -1,11 +1,12 @@
 import React from "react";
 import Container from "../Container";
 import { StyledButtonsWrapper, StyledTitle } from "./styles";
-import Button from "../Buttons";
+
 import Output from "../Output";
 
 import { useAppSelector } from "../../store";
 import Options from "../Options";
+import Button from "../ui/Button";
 
 function App() {
   const buttonsArr = useAppSelector(

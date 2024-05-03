@@ -6,10 +6,11 @@ import {
   StyledModalText,
 } from "./style";
 import React, { FC } from "react";
-import Button from "../Buttons";
+
 import { colors } from "../../styles/variables";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { closeModal } from "../../store/modalSlice";
+import Button from "../ui/Button";
 
 interface IModal {
   confirmFunc: () => void;

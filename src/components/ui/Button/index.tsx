@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { StyledButton } from "./styles";
-import { addLog, clearLogs } from "../../store/logsSlice";
-import { useAppDispatch } from "../../store";
+import { addLog, clearLogs } from "../../../store/logsSlice";
+import { useAppDispatch } from "../../../store";
 
 interface IButton {
   text: string;
