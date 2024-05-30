@@ -27,7 +27,7 @@ const Output = () => {
       <StyledOutput>
         {logsArr.map((number, index) => (
           <StyledItem key={index}>
-            № {number}
+            {number}
             <StyledDeleteCross onClick={() => crossHandler(index)}>
               &times;
             </StyledDeleteCross>

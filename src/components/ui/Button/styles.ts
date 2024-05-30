@@ -20,4 +20,8 @@ export const StyledButton = styled.button`
     height: 45px;
     font-size: 15px;
   }
+
+  @media (max-width: 600px) {
+    width: 150px;
+  }
 `;

@@ -5,8 +5,9 @@ import { StyledButtonsWrapper, StyledTitle } from "./styles";
 import Output from "../Output";
 
 import { useAppSelector } from "../../store";
-import Options from "../Options";
+// import Options from "../Options";
 import Button from "../ui/Button";
+import TimerManager from "../TimerManager";
 
 function App() {
   const buttonsArr = useAppSelector(
@@ -25,7 +26,8 @@ function App() {
           />
         ))}
       </StyledButtonsWrapper>
-      <Options />
+      <TimerManager />
+      {/*<Options />*/}
       <Output />
     </Container>
   );

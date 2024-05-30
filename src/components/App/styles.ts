@@ -13,4 +13,8 @@ export const StyledButtonsWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 25px;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
 `;
